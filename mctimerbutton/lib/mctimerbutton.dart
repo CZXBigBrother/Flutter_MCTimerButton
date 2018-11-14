@@ -9,7 +9,13 @@ class MCTimerButton extends StatefulWidget {
   int time;
   String sendtitle;
   String reSendTitle;
-  MCTimerButton({this.key, this.callback,this.sendtitle = "发送短信", this.time = 60});
+  String unit;
+  MCTimerButton(
+      {this.key,
+      this.callback,
+      this.sendtitle = "send message",
+      this.time = 60,
+      this.unit = "s"});
   MCTimerButtonState state;
   bool isRun() {
     return state.timer != null;
@@ -70,7 +76,7 @@ class MCTimerButtonState extends State<MCTimerButton> {
 
   @override
   Widget build(BuildContext context) {
-    String time = this.timer != null ? "${this.timenum}秒" : "发送短信";
+    String time = this.timer != null ? "${this.timenum}秒" : widget.sendtitle;
     Color color = this.timer != null ? Colors.grey : Colors.blue;
     // TODO: implement build
     return RaisedButton(
@@ -78,7 +84,6 @@ class MCTimerButtonState extends State<MCTimerButton> {
         if (this.timer != null) {
           return;
         }
-        // this.startTimer();
         widget.callback();
       },
       color: color,

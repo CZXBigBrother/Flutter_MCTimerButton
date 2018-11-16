@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  mctimerbutton: ^0.0.1
+  mctimerbutton: ^0.0.3
 ```
 
 # How to use

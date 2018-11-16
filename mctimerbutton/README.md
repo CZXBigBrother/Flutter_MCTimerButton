@@ -1,29 +1,46 @@
-# mctimerbutton
-
-A new flutter plugin project.
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
-
-For help on editing plugin code, view the [documentation](https://flutter.io/developing-packages/#edit-plugin-package).
-
+# Screenshots
+---
 ![TIMERBUTTON.gif](https://github.com/CZXBigBrother/Flutter_MCTimerButton/blob/master/mctimerbutton/example/TIMERBUTTON.gif?raw=true)
-# 创建对象
+# Installation and Usage
+---
+To install this package, you need to add `mctimerbutton` (0.0.2 or higher) to the dependencies
+list of the `pubspec.yaml` file as follow:
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+
+  mctimerbutton: ^0.0.1
+```
+
+# How to use
+----
+Add the import to mctimerbutton/mctimerbutton.dart
+
+# create object
  ```
 new MCTimerButton(
       callback: this.buttonOnClickSendMessage,
-      sendtitle: "发送短信",
+      sendtitle: "sender message",
       time: 99,
     )
 ```
-# 开始倒数计时
+# start time
 ```
     shTimerButton.state.startTimer();
 ```
 
-# 强制停止 
+# stop time 
 ```
     shTimerButton.state.stopTimer();
+```
+# init params
+```
+ MCTimerButton(
+      {this.key,
+      this.callback,
+      this.sendtitle = "send message",
+      this.time = 60,
+      this.unit = "s"});
 ```

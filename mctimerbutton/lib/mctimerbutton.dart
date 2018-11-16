@@ -76,7 +76,7 @@ class MCTimerButtonState extends State<MCTimerButton> {
 
   @override
   Widget build(BuildContext context) {
-    String time = this.timer != null ? "${this.timenum}秒" : widget.sendtitle;
+    String time = this.timer != null ? "${this.timenum}${widget.unit}" : widget.sendtitle;
     Color color = this.timer != null ? Colors.grey : Colors.blue;
     // TODO: implement build
     return RaisedButton(
